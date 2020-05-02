@@ -1,7 +1,7 @@
 # wvc-tool
 WVC-Inverters Tool
 
-wvc-tool.py Manual
+wvc-tool.py Dev orientation Manual
 
 build-in	AutoGet "modemID" ("FA")
 		Default: Yes if "-m" is not selected.
