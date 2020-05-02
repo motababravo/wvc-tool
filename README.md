@@ -9,6 +9,9 @@ build-in		AutoGet "modemID" (FA)
 			//	Payload	:	'\FA\xFF\xFF\xFF\xFF\xFF\xFF\x6D'
 				Output	:	range '00000000-FFFFFFFF' : 'ser.read(8)	a.k.a "modemID"//
 
+			if "-q" missing Print: Payload and Output
+
+
 -o wvc.ini		Optional. Inverter's configuration file path. Multi Units.
 			Default: "On", even if not selected in case "wvc.ini" named file located/detected in same folder.
 			This option sub argument will define custom named configuration file's path.
@@ -34,7 +37,7 @@ build-in		AutoGet "modemID" (FA)
 			value range: 0000-FFFF
 
 
--d /dev/ttyX:9600	Optional. Phisical Serial device path. USB, RS232 etc.
+-d /dev/ttyX:9600	Optional. Phisical Serial device path and port speed. USB, RS232 etc.
 			If selected, sub argument must be defined, otherwise,
 			Print: "Device path must be defined'.
 			Default is "On", even not selected, with "/dev/ttyUSB0:9600" as a default value.
@@ -77,7 +80,7 @@ build-in		AutoGet "modemID" (FA)
 			//	Payload:	'\xf2\xfb\x04\x11\xe3\x88\xce\x65'	//
 
 
--p xxxx			Inverter Power Switch.
+-p xxxx			Inverter Power Switch. (F3/F4)
 			Requires "-o" or "-i".
 			If "-p" is selected and "-o" or "-i" are not,
 			Print: "-p" requires "-o" or "-i" to be selected in front".
@@ -97,7 +100,7 @@ build-in		AutoGet "modemID" (FA)
 			if "-q" missing Print: Payload and All Output
 
 
--b MQttIP:Port		Data collection and MQtt publisher.
+-b MQttIP:Port		Data collection and MQtt publisher. (F5)
 			Requires "-o" or "-i".
 			If "-b" is selected and "-o" or "-i" are not,
 			Print: "-b requires "-o" or "-i" to be selected in front".
