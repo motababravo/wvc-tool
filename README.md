@@ -41,13 +41,13 @@ build-in	AutoGet "modemID" ("FA")
 		//	serialPort = serial.Serial("/dev/ttyUSB0", 9600)	//
 
 
--n <IP>:<Port>	Optional. Ser2net connection IP and Port.
+-n IP:Port	Optional. Ser2net connection IP and Port.
 		Requires "-o" or "-i".
 		If "-n" is selected and "-o" or "-i" are not,
 		Print: "-n requires "-o" or "-i" to be selected in front".
 		If selected, "-d" sets "Off" and "physical" serial connection is replaced by "ser2net" connector.
 		This option requires sub argument, otherwise,
-		Print: "<IP>:<Port> must be defined".
+		Print: "IP:Port" must be defined.
 
 		//	serialPort = serial.serial_for_url('rfc2217://192.168.78.13:7000', timeout=1)	//
 
@@ -69,7 +69,7 @@ build-in	AutoGet "modemID" ("FA")
 		Optional sub argument: value range: 1-99
 		It is the number of cicles to be rolled and infinity loop if sub argument is missing.
 		//	Payload : 'F2<modemID><ID>65'
-			Output	: F2 ser.read(17)
+			Output	: ser.read(17)
 
 		DevOpsOnly: Working "Realtime Stats"
 
