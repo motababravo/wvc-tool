@@ -72,6 +72,7 @@ build-in		AutoGet "modemID" (FA)
 			Print: "-s requires "-o" or "-i" to be selected in front".
 			Optional sub argument: value range: 1-99
 			It is the number of cicles to be rolled and infinity loop if sub argument is missing.
+			
 			//	Payload : 'F2<modemID><InverterID>65'
 				Output	: ser.read(17)	//
 
