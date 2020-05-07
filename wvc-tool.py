@@ -1,11 +1,9 @@
 #!/usr/bin/python3
 
 import serial
-# Linux
+# Local
 ser = serial.Serial("/dev/ttyUSB0", 9600)
-# Windows
-# ser = serial.Serial("COM5", 9600)
-# Ser2Net
+# Remote (Ser2Net)
 # ser = serial.serial_for_url('rfc2217://192.168.78.13:7000', timeout=1)
 
 # AutoGet Modem ID
