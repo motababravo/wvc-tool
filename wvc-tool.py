@@ -3,8 +3,8 @@
 # Argparse, command-line options
 import argparse
 parser = argparse.ArgumentParser()
-parser.add_argument("-f", "--fork", help="Run in background")
-parser.add_argument("-q", "--quiet", help="Cuts All on-screen output")
+parser.add_argument("-f", "--fork", help="Run in background", action="store_true")
+parser.add_argument("-q", "--quiet", help="Cuts All on-screen output", action="store_true")
 parser.parse_args()
 
 import serial
