@@ -3,6 +3,8 @@
 # Argparse, command-line options
 import argparse
 parser = argparse.ArgumentParser()
+parser.add_argument("--verbosity", help="increase output verbosity")
+parser.add_argument("--verbosity", help="increase output verbosity")
 parser.parse_args()
 
 import serial
