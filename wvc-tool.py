@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+# Argparse, command-line options
+import argparse
+parser = argparse.ArgumentParser()
+parser.parse_args()
+
 import serial
 # Local
 ser = serial.Serial("/dev/ttyUSB0", 9600)
