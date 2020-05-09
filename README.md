@@ -49,6 +49,8 @@ else:
 			WVC800: A000-BFFF
 			WVC1200: C000-FFFF
 			
+			!!!!! Inverter also has a variant : "A": 120V and "B" 230V
+			to be determinated by F2 (realtime status) ???????????? 
 
 			"ID" 	- Inverter ID.
 			Located on the Inverter.
