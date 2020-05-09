@@ -8,7 +8,16 @@ build-in		AutoGet "modemID" (FA)
 
 			//	Payload	:	'\FA\xFF\xFF\xFF\xFF\xFF\xFF\x6D'
 				Output	:	range '00000000-FFFFFFFF' : 'ser.read(8)	a.k.a "modemID"//
-
+build-in		Test Modem connection
+			
+			// Payload = b'\xF8\xFB\x04\x11\xE3\xFF\xFF\x6B' # test modem connection
+				Output : 'f8fb0411e3ffff6b' ser.read(8)
+			
+			if bytes(s).hex() == 'f8fb0411e3ffff6b': ---- "F8<modemID(8)><inverterID(4)>6B"
+    print("Modem connection testing ... :" , bytes(s).hex() , "-" , "OK!")
+else:
+    print("Modem connection testing ... :" , bytes(s).hex() , "-" , "Fail!") //
+			
 			if "-q" missing Print: Payload and Output
 
 
