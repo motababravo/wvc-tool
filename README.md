@@ -19,18 +19,27 @@ build-in		AutoGet "modemID" (FA)
 
 
 
--i Type/ID 		Inverter's Type/ID. Single unit. (WVCXXX/XXXX)
+-i ID 			Inverter's ID. Single unit. (XXXX)
 			This Option is mandatory, if "-o" option's missing in front.
-			It can be skipped if "-o" is selected, and a file defined or wvc.ini named file, contains proper Inverter Type/ID entrys is located in the same folder.
+			It can be skipped if "-o" is selected, and a file defined or wvc.ini named file, contains proper Inverter ID entrys is located in the same folder.
 			If not selected and "-o" is missing or it's custom defined configuration file's content is incorrect/corupted/syntax_errors etc.
 			It's sub argument is missing and/or the default "wvc.ini" file is missing or is empty or incomplete
 			Print: "-i is a MANDATORY Option if "-o" isn't defined", folowed by the General Help.
 
-			If selected, "Type/ID" must be defined, otherwise,
-			Print: "You must define Type/ID".
+			If selected, "ID" must be defined, otherwise,
+			Print: "You must define ID".
 
 			"Type"  - Inverter model from current "lookup" file:
 			WVC295, WVC300, WVC350, WVC600, WVC850, WVC1200.
+			Type can be determinated by ID :
+			
+			WVC295: 2000-3FFF
+			WVC300: 4000-5FFF
+			WVC350: 6000-7FFF
+			WVC600: 8000-9FFF
+			WVC800: A000-BFFF
+			WVC1200: C000-FFFF
+			
 
 			"ID" 	- Inverter ID.
 			Located on the Inverter.
