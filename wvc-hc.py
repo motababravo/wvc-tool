@@ -29,14 +29,14 @@ payLoad = bytearray.fromhex(param)
 
 # Open serial port
 #serialPort = serial.serial_for_url('rfc2217://192.168.78.13:7000', timeout=1)
-#serialPort = serial.Serial("COM6", 9600)
+serialPort = serial.Serial("COM6", 9600)
 
 # Send payLoad data to modem
-#serialPort.write(payLoad)
+serialPort.write(payLoad)
 
 # Gets result from serial port
-#receiedData = serialPort.read(19)
-receiedData = bytearray.fromhex("f288ce6500005c001501290017014b00000000")
+receiedData = serialPort.read(19)
+#receiedData = bytearray.fromhex("f288ce6500005c001501290017014b00000000")
 
 if receiedData:
     # Expected result is f288ce6500005c001501290017014c00000000 (example)
