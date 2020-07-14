@@ -60,6 +60,30 @@ if receiedData:
         print("Device AC Voltage: " + Lookup("lookup_WVC600", "VAC" + voltAC))
 #        publish.single(varMQtopic + "/vac", Lookup("lookup_WVC600", "VAC" + voltAC), hostname=varMQttBrk)
 
+        # Build lookup string for Amper AC. This data is located before Volt AC and has a length of 2 bytes - need to be reversed
+        amperACHEXByte = output[20:24]        
+        amperACHEXByte = amperACHEXByte[2:4] + amperACHEXByte[0:2]
+        amperAC = str(int(amperACHEXByte, 16))        
+        print("amperACHEXByte: " + amperACHEXByte + ", DEC: " + amperAC)
+        print("Device AC Ampers: " + Lookup("lookup_WVC600", "AACB" + amperAC))
+
+
+        # Build lookup string for Volt DC. This data is located before Amper AC and has a length of 2 bytes - need to be reversed
+        voltDCHEXByte = output[16:20]        
+        voltDCHEXByte = voltDCHEXByte[2:4] + voltDCHEXByte[0:2]
+        voltDC = str(int(voltDCHEXByte, 16))        
+        print("voltDCHEXByte: " + voltDCHEXByte + ", DEC: " + voltDC)
+        print("Device DC Voltage: " + Lookup("lookup_WVC600", "VDC" + voltDC))
+
+
+        # Build lookup string for Amper DC. This data is located before Volt DC and has a length of 2 bytes - need to be reversed
+        amperDCHEXByte = output[12:16]        
+        amperDCHEXByte = amperDCHEXByte[2:4] + amperDCHEXByte[0:2]
+        amperDC = str(int(amperDCHEXByte, 16))        
+        print("amperDCHEXByte: " + amperDCHEXByte + ", DEC: " + amperDC)
+        print("Device DC Ampers: " + Lookup("lookup_WVC600", "ADC" + amperDC))
+
+
     else:
         print("Invalid output")
 else:
