@@ -30,7 +30,7 @@ payLoad = bytearray.fromhex(param)
 # Open serial port
 #serialPort = serial.serial_for_url('rfc2217://192.168.78.13:7000', timeout=1)
 #serialPort = serial.Serial("/dev/ttyAMA0", 9600)
-serialPort = serial.Serial("COM6", 9600)
+serialPort = serial.Serial("COM6", 9600, timeout=1)
 
 # Send payLoad data to modem
 serialPort.write(payLoad)
