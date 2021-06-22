@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 ## Inverter id is "88ce"
+## arg1 can be on, off, and a value between 01-64 (0-100%)
 
 import sys
 import serial
